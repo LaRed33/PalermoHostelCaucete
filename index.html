@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Palermo | Caucete, San Juan - Tu refugio en Cuyo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cuyo: {
+                            terracota: '#C85A32',
+                            'terracota-dark': '#A34320',
+                            arena: '#F7F3EE',
+                            'arena-dark': '#E8DFD5',
+                            oliva: '#556B2F',
+                            'oliva-light': '#8A9A5B',
+                            sol: '#E6A100',
+                            tinto: '#6B1D2F',
+                            grafito: '#2C2A29'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(247, 243, 238, 0.92);
+            backdrop-filter: blur(10px);
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(44, 42, 41, 0.4) 0%, rgba(44, 42, 41, 0.75) 100%);
+        }
+        .bg-pattern {
+            background-color: #f7f3ee;
+            background-image: radial-gradient(#c85a32 0.75px, transparent 0.75px), radial-gradient(#c85a32 0.75px, #f7f3ee 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="font-sans text-cuyo-grafito bg-cuyo-arena selection:bg-cuyo-terracota selection:text-white">
+
+    <!-- Encabezado / Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="glass-nav border-b border-cuyo-arena-dark/50 shadow-sm transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    
+                    <!-- Logo -->
+                    <a href="#inicio" class="flex items-center gap-3 group">
+                        <div class="w-12 h-12 rounded-2xl bg-cuyo-terracota flex items-center justify-center text-white text-xl font-bold shadow-md shadow-cuyo-terracota/30 group-hover:bg-cuyo-terracota-dark transition-all transform group-hover:scale-105">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <div>
+                            <span class="font-serif text-2xl font-bold tracking-tight text-cuyo-grafito block leading-tight">Hostel Palermo</span>
+                            <span class="text-xs uppercase tracking-widest text-cuyo-terracota font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-location-dot text-[10px]"></i> Caucete, San Juan
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+                        <a href="#inicio" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Inicio</a>
+                        <a href="#habitaciones" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Habitaciones</a>
+                        <a href="#servicios" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Servicios</a>
+                        <a href="#turismo" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Turismo & San Juan</a>
+                        <a href="#galeria" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Galería</a>
+                        <a href="#contacto" class="px-3 py-2 text-cuyo-grafito hover:text-cuyo-terracota transition-colors">Contacto</a>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="hidden md:flex items-center">
+                        <a href="#contacto" class="bg-cuyo-terracota hover:bg-cuyo-terracota-dark text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-md shadow-cuyo-terracota/20 hover:shadow-lg hover:shadow-cuyo-terracota/30 flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            Reservar Ahora
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="p-2 rounded-lg text-cuyo-grafito hover:bg-cuyo-arena-dark/50 focus:outline-none" aria-label="Abrir Menú">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobile-menu" class="hidden md:hidden bg-cuyo-arena border-b border-cuyo-arena-dark px-4 pt-2 pb-6 space-y-3 transition-all">
+                <a href="#inicio" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">Inicio</a>
+                <a href="#habitaciones" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">Habitaciones & Tarifas</a>
+                <a href="#servicios" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">Servicios</a>
+                <a href="#turismo" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">San Juan & Caucete</a>
+                <a href="#galeria" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">Galería</a>
+                <a href="#contacto" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-cuyo-arena-dark/50">Contacto & Ubicación</a>
+                <a href="#contacto" class="mobile-link block w-full text-center bg-cuyo-terracota text-white px-4 py-3 rounded-xl font-bold shadow-md">
+                    <i class="fa-regular fa-calendar-check mr-2"></i> Reservar Ahora
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Hostel Palermo Caucete Ambiente" 
+                 class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000"
+                 id="hero-bg-img">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-200 text-sm font-medium mb-6">
+                <i class="fa-solid fa-sun"></i> Caucete, La Puerta del Sol Sanjuanino
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Tu hogar viajero en <span class="text-amber-400 italic">el corazón de Cuyo</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl md:text-2xl text-stone-200 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                El punto de partida ideal para mochileros y exploradores. Descubrí la Difunta Correa, la Ruta del Vino, la gastronomía cuyana y descansá con la calidez que te merecés.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contacto" class="w-full sm:w-auto bg-cuyo-terracota hover:bg-cuyo-terracota-dark text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:-translate-y-0.5 shadow-xl shadow-cuyo-terracota/30 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Reservar o Consultar
+                </a>
+                <a href="https://wa.me/5492641234567?text=Hola!%20Quiero%20consultar%20disponibilidad%20en%20Hostel%20Palermo%20Caucete" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:-translate-y-0.5 shadow-xl shadow-emerald-900/30 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    WhatsApp Directo
+                </a>
+            </div>
+
+            <!-- Quick Info Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
+                    <div class="text-amber-400 text-2xl font-bold mb-1"><i class="fa-solid fa-wifi"></i> 100 Mega</div>
+                    <div class="text-xs text-stone-300 uppercase tracking-wider">WiFi de alta velocidad</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
+                    <div class="text-amber-400 text-2xl font-bold mb-1"><i class="fa-solid fa-fire"></i> Parrilla</div>
+                    <div class="text-xs text-stone-300 uppercase tracking-wider">Patio & Asador Cuyo</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
+                    <div class="text-amber-400 text-2xl font-bold mb-1"><i class="fa-solid fa-mug-hot"></i> Incluido</div>
+                    <div class="text-xs text-stone-300 uppercase tracking-wider">Desayuno artesanal</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
+                    <div class="text-amber-400 text-2xl font-bold mb-1"><i class="fa-solid fa-map-location-dot"></i> Estratégico</div>
+                    <div class="text-xs text-stone-300 uppercase tracking-wider">Cerca Difunta Correa</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#habitaciones" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- Habitaciones y Tarifas -->
+    <section id="habitaciones" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cuyo-terracota font-bold text-sm tracking-widest uppercase mb-2 block">Alojamiento a tu medida</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cuyo-grafito">Nuestras Habitaciones</h2>
+                <div class="w-20 h-1.5 bg-cuyo-terracota mx-auto my-4 rounded-full"></div>
+                <p class="text-stone-600 text-lg">Diseñadas para garantizar descanso óptimo, confort y un ambiente amigable para intercambiar experiencias de viaje.</p>
+            </div>
+
+            <!-- Rooms Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Room Card 1 -->
+                <div class="bg-cuyo-arena rounded-3xl overflow-hidden border border-cuyo-arena-dark shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" 
+                             alt="Compartida Mochilera Hostel Palermo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cuyo-terracota text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
+                            Mochileros & Grupos
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="font-serif text-2xl font-bold text-cuyo-grafito">Compartida Mochilera</h3>
+                                <div class="text-right">
+                                    <span class="text-2xl font-extrabold text-cuyo-terracota">$12.000</span>
+                                    <span class="text-xs text-stone-500 block">/ noche / pers</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                                Camas cucheta resistentes con lockers individuales, tomacorrientes y luz de lectura en cada cama. Ideal para viajeros solitarios.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-sm text-stone-700">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Capacidad: 4 a 6 personas</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Lockers individuales con llave</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Aire acondicionado frío/calor</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Baño compartido equipado</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Sábanas limpias incluidas</li>
+                            </ul>
+                        </div>
+                        <button onclick="openBookingModal('Compartida Mochilera')" class="w-full bg-cuyo-grafito hover:bg-cuyo-terracota text-white py-3 rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bed"></i> Reservar Compartida
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room Card 2 -->
+                <div class="bg-cuyo-arena rounded-3xl overflow-hidden border-2 border-cuyo-terracota shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group relative">
+                    <div class="absolute top-0 right-0 bg-cuyo-sol text-cuyo-grafito font-bold text-xs px-4 py-1.5 rounded-bl-xl z-10 shadow-md uppercase tracking-wider">
+                        Más Popular
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" 
+                             alt="Habitación Privada Doble Hostel Palermo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cuyo-oliva text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
+                            Parejas & Privacidad
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="font-serif text-2xl font-bold text-cuyo-grafito">Privada Doble / Matrimonial</h3>
+                                <div class="text-right">
+                                    <span class="text-2xl font-extrabold text-cuyo-terracota">$32.000</span>
+                                    <span class="text-xs text-stone-500 block">/ noche (hab)</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                                Un espacio tranquilo y reconfortante. Disponible con cama matrimonial Sommier o dos camas individuales.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-sm text-stone-700">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Cama Sommier 2 plazas / Twin</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Baño privado en suite</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Aire acondicionado Split & Smart TV</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Toallas y amenities incluidas</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Vista al patio interior</li>
+                            </ul>
+                        </div>
+                        <button onclick="openBookingModal('Privada Doble')" class="w-full bg-cuyo-terracota hover:bg-cuyo-terracota-dark text-white py-3 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <i class="fa-solid fa-key"></i> Reservar Privada
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room Card 3 -->
+                <div class="bg-cuyo-arena rounded-3xl overflow-hidden border border-cuyo-arena-dark shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" 
+                             alt="Habitación Familiar Hostel Palermo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cuyo-tinto text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
+                            Familias & Pequeños Grupos
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="font-serif text-2xl font-bold text-cuyo-grafito">Habitación Familiar</h3>
+                                <div class="text-right">
+                                    <span class="text-2xl font-extrabold text-cuyo-terracota">$48.000</span>
+                                    <span class="text-xs text-stone-500 block">/ noche (hasta 4/5 p)</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                                Espaciosa suite configurada con cama matrimonial y camas individuales. Cómoda y funcional para familias en ruta.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-sm text-stone-700">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Capacidad 4 a 5 personas</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Baño privado ampliado</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Climatización frío/calor</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Frigobar y pava eléctrica</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-cuyo-oliva"></i> Armario amplio</li>
+                            </ul>
+                        </div>
+                        <button onclick="openBookingModal('Habitación Familiar')" class="w-full bg-cuyo-grafito hover:bg-cuyo-terracota text-white py-3 rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-people-roof"></i> Reservar Familiar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios e Instalaciones -->
+    <section id="servicios" class="py-24 bg-cuyo-arena border-y border-cuyo-arena-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cuyo-terracota font-bold text-sm tracking-widest uppercase mb-2 block">Todo para tu comodidad</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cuyo-grafito">Servicios e Instalaciones</h2>
+                <div class="w-20 h-1.5 bg-cuyo-terracota mx-auto my-4 rounded-full"></div>
+                <p class="text-stone-600 text-lg">Nos aseguramos de que tengas todas las facilidades para que tu estadía en Caucete sea relajada y memorable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-cuyo-terracota/10 text-cuyo-terracota rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-cuyo-terracota group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">WiFi Ultra Rápido</h3>
+                    <p class="text-stone-600 text-sm">Conexión de fibra óptica en todas las habitaciones y áreas comunes para trabajar o comunicarse sin interrupciones.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-cuyo-oliva/10 text-cuyo-oliva rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-cuyo-oliva group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-kitchen-set"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Cocina Equipada</h3>
+                    <p class="text-stone-600 text-sm">Cocina compartida amplia con heladera, microondas, utensilios, vajilla e ingredientes básicos a disposición.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-cuyo-tinto/10 text-cuyo-tinto rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-cuyo-tinto group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Parrilla y Asador</h3>
+                    <p class="text-stone-600 text-sm">Gran churrasquera tradicional sanjuanina para disfrutar un buen asado en equipo o en familia.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-cuyo-sol/10 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-cuyo-sol group-hover:text-cuyo-grafito transition-colors">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Desayuno Incluido</h3>
+                    <p class="text-stone-600 text-sm">Café, té, mate, pan casero, mermeladas regionales sanjuaninas y dulce de leche para empezar con energía.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-emerald-600/10 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Jardín y Estar</h3>
+                    <p class="text-stone-600 text-sm">Patio arbolado con sombras para descansar, hamacas paraguayas, mesas al aire libre y área chill-out.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Atención 24/7</h3>
+                    <p class="text-stone-600 text-sm">Flexibilidad en check-in / check-out con previo aviso y recepción dispuesta a ayudarte a cualquier hora.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-purple-600/10 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Información Turística</h3>
+                    <p class="text-stone-600 text-sm">Asesoramiento local gratuito, contactos de transporte a Difunta Correa, excursiones y reservas de bodegas.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 bg-stone-700/10 text-stone-700 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-stone-700 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-cuyo-grafito">Estacionamiento</h3>
+                    <p class="text-stone-600 text-sm">Espacio para vehículos y motocicletas seguro dentro o frente al predio (consultar según disponibilidad).</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Turismo en Caucete y San Juan -->
+    <section id="turismo" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-cuyo-terracota font-bold text-sm tracking-widest uppercase mb-2 block">Descubrí la Región de Cuyo</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cuyo-grafito">Atractivos en Caucete y San Juan</h2>
+                    <div class="w-20 h-1.5 bg-cuyo-terracota my-4 rounded-full"></div>
+                </div>
+                <p class="text-stone-600 max-w-md text-base mt-4 md:mt-0">
+                    Hostel Palermo te conecta fácilmente con las maravillas culturales, místicas y naturales del este de San Juan y de toda la provincia.
+                </p>
+            </div>
+
+            <!-- Attractions Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Attraction 1 -->
+                <div class="bg-cuyo-arena rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" 
+                             alt="Santuario Difunta Correa Vallecito" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-xs text-amber-300 font-semibold bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                            <i class="fa-solid fa-location-dot"></i> Vallecito (A 25 min)
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-xl text-cuyo-grafito mb-2">Santuario Difunta Correa</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            Emblemático centro de fe popular en Vallecito, departamento de Caucete. Miles de promesantes llegan diariamente a rendir culto a Deolinda Correa.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-cuyo-terracota uppercase tracking-wider">
+                            <i class="fa-solid fa-circle-info"></i> Imperdible en Caucete
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Attraction 2 -->
+                <div class="bg-cuyo-arena rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" 
+                             alt="Ruta del Vino San Juan Caucete" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-xs text-amber-300 font-semibold bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                            <i class="fa-solid fa-location-dot"></i> Caucete & Pie de Palo
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-xl text-cuyo-grafito mb-2">Ruta del Vino y Bodegas</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            Caucete destaca por sus viñedos al pie de la Sierra de Pie de Palo. Degustá vinos Syrah, Malbec y el tradicional vino moscatel de la zona.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-cuyo-tinto uppercase tracking-wider">
+                            <i class="fa-solid fa-wine-glass"></i> Enoturismo
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Attraction 3 -->
+                <div class="bg-cuyo-arena rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" 
+                             alt="Ischigualasto Valle de la Luna San Juan" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-xs text-amber-300 font-semibold bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                            <i class="fa-solid fa-location-dot"></i> San Juan Norte
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-xl text-cuyo-grafito mb-2">Valle de la Luna (Ischigualasto)</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            Patrimonio de la Humanidad UNESCO. Paisajes triásicos fascinantes y formaciones rocosas únicas en el mundo.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-cuyo-oliva uppercase tracking-wider">
+                            <i class="fa-solid fa-mountain"></i> Excursión de Día
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Attraction 4 -->
+                <div class="bg-cuyo-arena rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" 
+                             alt="Dique Ullum y Valle de Zonda" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-xs text-amber-300 font-semibold bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                            <i class="fa-solid fa-location-dot"></i> San Juan Centro / Oeste
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-xl text-cuyo-grafito mb-2">Valle de Zonda y Dique Ullum</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            Espejos de agua rodeados de montañas ideales para kayaks, deportes náuticos y atardeceres espectaculares sanjuaninos.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 uppercase tracking-wider">
+                            <i class="fa-solid fa-water"></i> Naturaleza & Sol
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tip Banner -->
+            <div class="mt-12 bg-cuyo-terracota/10 border border-cuyo-terracota/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-cuyo-terracota text-white rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-cuyo-grafito">¿Llegás en Colectivo a Caucete?</h4>
+                        <p class="text-stone-600 text-sm">Estamos situados a solo minutos de la Terminal de Colectivos de Caucete. Avisanos tu horario de arribo y te asistimos con las indicaciones de llegada.</p>
+                    </div>
+                </div>
+                <a href="#contacto" class="bg-cuyo-terracota text-white font-bold px-6 py-3 rounded-xl hover:bg-cuyo-terracota-dark transition-colors whitespace-nowrap text-sm">
+                    Consultar Traslado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Fotos -->
+    <section id="galeria" class="py-24 bg-cuyo-arena">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-cuyo-terracota font-bold text-sm tracking-widest uppercase mb-2 block">Conocé nuestro espacio</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cuyo-grafito">Galería del Hostel</h2>
+                <div class="w-20 h-1.5 bg-cuyo-terracota mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="gallery-filters">
+                <button class="filter-btn active bg-cuyo-terracota text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-sm" data-filter="all">Todos</button>
+                <button class="filter-btn bg-white text-cuyo-grafito hover:bg-cuyo-arena-dark px-5 py-2 rounded-full text-sm font-semibold transition-all border border-stone-200" data-filter="instalaciones">Instalaciones</button>
+                <button class="filter-btn bg-white text-cuyo-grafito hover:bg-cuyo-arena-dark px-5 py-2 rounded-full text-sm font-semibold transition-all border border-stone-200" data-filter="habitaciones">Habitaciones</button>
+                <button class="filter-btn bg-white text-cuyo-grafito hover:bg-cuyo-arena-dark px-5 py-2 rounded-full text-sm font-semibold transition-all border border-stone-200" data-filter="patio">Patio & Parrilla</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <div class="gallery-item instalaciones relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" alt="Área común y recepción" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Estar Común & Convivencia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item habitaciones relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Habitación Privada Confort" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Habitación Privada Doble</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item patio relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80" alt="Patio con asador cuyano" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Patio & Sector de Churrasquera</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item instalaciones relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cocina totalmente equipada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Cocina Compartida Equipada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item habitaciones relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Dormitorio mochilero espacioso" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Dormitorio Compartido</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item patio relative h-64 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Zona de descanso al aire libre" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl mb-2"></i>
+                            <p>Jardín Chill Out</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de Huéspedes -->
+    <section class="py-20 bg-cuyo-grafito text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-cuyo-sol font-bold text-sm tracking-widest uppercase mb-2 block">Experiencias reales</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">Lo que dicen los viajeros</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative">
+                    <div class="text-cuyo-sol text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed mb-6 italic">
+                        "Insuperable atención. Paré en Caucete para ir al santuario de la Difunta Correa y me quedé dos días más. El asador del patio es genial y el ambiente súper cálido."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-cuyo-terracota flex items-center justify-center font-bold text-white text-sm">
+                            LR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Lucas Rodríguez</h4>
+                            <span class="text-xs text-stone-400">Mochilero - Buenos Aires</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative">
+                    <div class="text-cuyo-sol text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed mb-6 italic">
+                        "Excelente opción para familias en ruta hacia San Juan o Ischigualasto. La habitación privada con baño en suite era sumamente limpia y el desayuno riquísimo."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-cuyo-oliva flex items-center justify-center font-bold text-white text-sm">
+                            MC
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Mariana & Carlos</h4>
+                            <span class="text-xs text-stone-400">Familia - Córdoba</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative">
+                    <div class="text-cuyo-sol text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed mb-6 italic">
+                        "Viajo trabajando remoto y el WiFi volaba. Además nos asesoraron para hacer una recorrida por las bodegas de Caucete. Volvería sin dudas!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-cuyo-tinto flex items-center justify-center font-bold text-white text-sm">
+                            SG
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Sofia Gold</h4>
+                            <span class="text-xs text-stone-400">Nómada Digital - Chile</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reserva / Contacto e Información -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info & Map Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-cuyo-terracota font-bold text-sm tracking-widest uppercase mb-2 block">Ponete en contacto</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cuyo-grafito">Reservá tu lugar en Caucete</h2>
+                        <div class="w-16 h-1.5 bg-cuyo-terracota my-4 rounded-full"></div>
+                        <p class="text-stone-600 leading-relaxed text-sm">
+                            Completá el formulario para recibir presupuesto exacto y disponibilidad en tiempo real, o escribinos directamente por WhatsApp para atención inmediata.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cuyo-arena rounded-2xl flex items-center justify-center text-cuyo-terracota text-xl shrink-0 border border-cuyo-arena-dark">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cuyo-grafito">Dirección en Caucete</h4>
+                                <p class="text-stone-600 text-sm">Av. Principal 450 (A pocas cuadras de la plaza céntrica), Caucete, San Juan, Argentina.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cuyo-arena rounded-2xl flex items-center justify-center text-emerald-600 text-xl shrink-0 border border-cuyo-arena-dark">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cuyo-grafito">WhatsApp & Teléfono</h4>
+                                <p class="text-stone-600 text-sm">+54 9 264 123-4567 / +54 264 496-0000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cuyo-arena rounded-2xl flex items-center justify-center text-cuyo-tinto text-xl shrink-0 border border-cuyo-arena-dark">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cuyo-grafito">Correo Electrónico</h4>
+                                <p class="text-stone-600 text-sm">reservas@hostelpalermocaucete.com.ar</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cuyo-arena rounded-2xl flex items-center justify-center text-cuyo-oliva text-xl shrink-0 border border-cuyo-arena-dark">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cuyo-grafito">Horarios</h4>
+                                <p class="text-stone-600 text-sm">Check-in: 12:00 hs | Check-out: 10:00 hs<br>Recepción con asistencia 24 horas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks -->
+                    <div class="pt-4">
+                        <h4 class="font-bold text-cuyo-grafito mb-3 text-sm">Síguenos en Redes</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 bg-cuyo-arena hover:bg-cuyo-terracota hover:text-white rounded-xl flex items-center justify-center text-cuyo-grafito transition-colors border border-cuyo-arena-dark" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-cuyo-arena hover:bg-cuyo-terracota hover:text-white rounded-xl flex items-center justify-center text-cuyo-grafito transition-colors border border-cuyo-arena-dark" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 bg-cuyo-arena hover:bg-cuyo-terracota hover:text-white rounded-xl flex items-center justify-center text-cuyo-grafito transition-colors border border-cuyo-arena-dark" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Booking Form Container -->
+                <div class="lg:col-span-7 bg-cuyo-arena p-8 sm:p-10 rounded-3xl border border-cuyo-arena-dark shadow-lg">
+                    <h3 class="font-serif text-2xl font-bold text-cuyo-grafito mb-2">Consulta de Disponibilidad</h3>
+                    <p class="text-stone-600 text-sm mb-8">Completá los detalles y te responderemos a la brevedad confirmando tu estadía.</p>
+
+                    <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Nombre y Apellido *</label>
+                                <input type="text" id="nombre" required placeholder="Ej: Juan Pérez" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="telefono" required placeholder="Ej: +54 9 264 ..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Fecha de Entrada *</label>
+                                <input type="date" id="checkin" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm text-stone-700">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Fecha de Salida *</label>
+                                <input type="date" id="checkout" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm text-stone-700">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Tipo de Habitación *</label>
+                                <select id="tipoHabitacion" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm text-stone-700">
+                                    <option value="">Seleccionar opción...</option>
+                                    <option value="Compartida Mochilera">Compartida Mochilera ($12.000/pers)</option>
+                                    <option value="Privada Doble">Habitación Privada Doble ($32.000)</option>
+                                    <option value="Habitación Familiar">Habitación Familiar ($48.000)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Cantidad de Personas *</label>
+                                <input type="number" id="personas" min="1" max="10" value="1" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-cuyo-grafito mb-2">Comentarios o pedidos especiales</label>
+                            <textarea id="mensaje" rows="3" placeholder="¿Viajas con mascota? ¿Llegas en colectivo o auto? Dejanos tu mensaje..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-cuyo-terracota bg-white text-sm"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-cuyo-terracota hover:bg-cuyo-terracota-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-cuyo-terracota/30 flex items-center justify-center gap-2 text-base">
+                                <i class="fa-solid fa-paper-plane"></i> Enviarme Cotización por WhatsApp / Email
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Alert Box Container (JS Controlled) -->
+                    <div id="formSuccessAlert" class="hidden mt-4 p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 rounded-xl text-sm font-medium flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-xl text-emerald-600"></i>
+                        <span>¡Gracias por tu mensaje! Serás redirigido para confirmar tu solicitud por WhatsApp.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Pie de Página -->
+    <footer class="bg-cuyo-grafito text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-cuyo-terracota flex items-center justify-center text-white font-bold text-lg">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold text-white">Hostel Palermo</span>
+                    </div>
+                    <p class="text-sm text-stone-400 max-w-sm mb-4 leading-relaxed">
+                        Alojamiento cálido, seguro y accesible en Caucete, San Juan. El punto de encuentro de los viajeros que exploran el Sol y la Tierra Cuyo.
+                    </p>
+                    <p class="text-xs text-stone-500">© 2026 Hostel Palermo Caucete. Todos los derechos reservados.</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-cuyo-terracota transition-colors">Inicio</a></li>
+                        <li><a href="#habitaciones" class="hover:text-cuyo-terracota transition-colors">Habitaciones & Tarifas</a></li>
+                        <li><a href="#servicios" class="hover:text-cuyo-terracota transition-colors">Servicios</a></li>
+                        <li><a href="#turismo" class="hover:text-cuyo-terracota transition-colors">Turismo San Juan</a></li>
+                        <li><a href="#contacto" class="hover:text-cuyo-terracota transition-colors">Reservas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Ubicación</h4>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-location-dot text-cuyo-terracota mr-2"></i> Caucete, San Juan, Argentina</p>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-phone text-cuyo-terracota mr-2"></i> +54 9 264 123-4567</p>
+                    <p class="text-sm"><i class="fa-solid fa-clock text-cuyo-terracota mr-2"></i> Abierto 24/7</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-stone-800 text-xs text-center text-stone-500">
+                Diseñado para brindar la mejor experiencia viajera en Caucete, San Juan, Cuyo, Argentina.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5492641234567?text=Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20Hostel%20Palermo" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-40 bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:bg-emerald-600 transition-all transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal para Imágenes Ampliadas -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl" onclick="event.stopPropagation()">
+            <img id="modalImg" src="" alt="Vista ampliada" class="max-w-full max-h-[85vh] object-contain rounded-xl">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 bg-black/60 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-black transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <p id="modalCaption" class="text-white text-center py-2 text-sm font-medium"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-cuyo-terracota', 'text-white');
+                    b.classList.add('bg-white', 'text-cuyo-grafito');
+                });
+                
+                btn.classList.add('active', 'bg-cuyo-terracota', 'text-white');
+                btn.classList.remove('bg-white', 'text-cuyo-grafito');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal for Gallery Images
+        function openImageModal(element) {
+            const img = element.querySelector('img');
+            const caption = element.querySelector('p').innerText;
+            const modal = document.getElementById('imageModal');
+            
+            document.getElementById('modalImg').src = img.src;
+            document.getElementById('modalCaption').innerText = caption;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Quick booking helper from room cards
+        function openBookingModal(tipoHabitacion) {
+            const selectHab = document.getElementById('tipoHabitacion');
+            if (selectHab) {
+                selectHab.value = tipoHabitacion;
+            }
+            const contactoSection = document.getElementById('contacto');
+            contactoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handling with WhatsApp integration
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const tipoHabitacion = document.getElementById('tipoHabitacion').value;
+            const personas = document.getElementById('personas').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const alertBox = document.getElementById('formSuccessAlert');
+            alertBox.classList.remove('hidden');
+
+            // Construct WhatsApp Message
+            const textoWhatsApp = `*Reserva Hostel Palermo Caucete*%0A` +
+                `*Nombre:* ${encodeURIComponent(nombre)}%0A` +
+                `*Teléfono:* ${encodeURIComponent(telefono)}%0A` +
+                `*Check-in:* ${encodeURIComponent(checkin)}%0A` +
+                `*Check-out:* ${encodeURIComponent(checkout)}%0A` +
+                `*Habitación:* ${encodeURIComponent(tipoHabitacion)}%0A` +
+                `*Personas:* ${encodeURIComponent(personas)}%0A` +
+                `*Comentarios:* ${encodeURIComponent(mensaje || 'Sin especificación')}`;
+
+            setTimeout(() => {
+                window.open(`https://wa.me/5492641234567?text=${textoWhatsApp}`, '_blank');
+            }, 1000);
+        }
+
+        // Set default dates for form inputs (Today and Tomorrow)
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            const checkinInput = document.getElementById('checkin');
+            const checkoutInput = document.getElementById('checkout');
+
+            if (checkinInput && checkoutInput) {
+                checkinInput.value = today.toISOString().split('T')[0];
+                checkoutInput.value = tomorrow.toISOString().split('T')[0];
+            }
+        });
+    </script>
+</body>
+</html>
